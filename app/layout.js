@@ -2,7 +2,7 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -39,22 +39,7 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${montserrat.variable} scroll-smooth`}
     >
       <body className="min-h-screen flex flex-col font-sans bg-[#f7f9fb] text-[#191c1e]">
-        <Script
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=G-WGFM62SGC1`}
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-WGFM62SGC1');
-            `,
-          }}
-        />
+        <GoogleAnalytics gaId="G-WGFM62SGC1" />
         <Navbar />
         <main className="flex-grow">
           {children}

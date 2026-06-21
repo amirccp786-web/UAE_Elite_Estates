@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${montserrat.variable} scroll-smooth`}
     >
       <body className="min-h-screen flex flex-col font-sans bg-[#f7f9fb] text-[#191c1e]">
-        <GoogleAnalytics gaId="G-WGFM62SGC1" />
+        <GoogleAnalytics gaId="G-S4L9YJVE5V" />
         <Navbar />
         <main className="flex-grow">
           {children}
